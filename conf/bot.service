@@ -1,0 +1,15 @@
+[Unit]
+Description=Bot-Discord
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/discord-story-bot/bin
+ExecStart=/var/www/discord-story-bot/bin/bot-linux
+EnvironmentFile=/var/www/discord-story-bot/bin/config.env
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
